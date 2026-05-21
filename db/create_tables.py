@@ -1,12 +1,18 @@
 import psycopg2
 
-conn = psycopg2.connect(
-    host="localhost",
-    database="aisle-i-db",
-    user="sophiazheng",
-    password=""
-)
 
+def connect_db():
+    
+   conn = psycopg2.connect(
+      host="localhost",
+      database="aisle-i-db",
+      user="sophiazheng",
+      password=""
+   )
+
+   return conn
+
+conn = connect_db()
 cursor = conn.cursor()
 
 cursor.execute("""
